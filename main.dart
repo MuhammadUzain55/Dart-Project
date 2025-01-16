@@ -7,7 +7,7 @@ void main() {
 //////////////////  Main menu \\\\\\\\\\\\\\\\\\\\
 
   while (true) {
-    print("\n---- Welcome to Student Portal ----");
+    print("--------------- Welcome to Student Portal ----------------");
     print("1: Registration");
     print("2: Login");
     print("3: View All Student(Admin)");
@@ -19,13 +19,13 @@ void main() {
 
     String? choice = stdin.readLineSync();
 
-    if (choice == 1) {
+    if (choice == "1") {
       registrationStudent(students);
-    } else if (choice == 2) {
+    } else if (choice == "2") {
       loginStudent(students);
-    } else if (choice == 3) {
+    } else if (choice == "3") {
       viewAllStudents(students);
-    } else if (choice == 4) {
+    } else if (choice == "4") {
       print("Exiting... Goodbye!");
       break;
     } else {
@@ -33,3 +33,8 @@ void main() {
     }
   }
 }
+
+
+
+
+
