@@ -2,6 +2,7 @@ import 'dart:io';
 
 ////////////  Registration function \\\\\\\\\\\\\\\\
 registrationStudent(List<Map<String, String>> students) {
+  print("------------- Welcome to Registration Form --------------");
 ///// User sy name lena \\\\\
   stdout.write("Enter your name: ");
   String? name = stdin.readLineSync();
@@ -30,3 +31,35 @@ registrationStudent(List<Map<String, String>> students) {
   }
 }
 
+///////////////////  Login function \\\\\\\\\\\\\\\\\\\\\\\\\
+loginStudent(List<Map<String, String>> students) {
+  print("---------------- Welcome to Login Page ----------------");
+  /// User sy email lena \\\
+  stdout.write("Enter your email: ");
+  String? email = stdin.readLineSync();
+
+  /// User sy password lena \\\
+  stdout.write("Enter your password: ");
+  String? password = stdin.readLineSync();
+
+  /// Email or password match krna \\\
+  var student = students.firstWhere(
+      (student) => student["email"] == email && student["password"] == password,
+      orElse: () => {});
+
+  /// If else laga kr check krna student exist krta h \\\
+  if (student.isNotEmpty) {
+    print("Login successful! Welcome ${student["name"]}.");
+  } else {
+    print("Invalid email or password.");
+  }
+}
+
+////////////////  View all students function \\\\\\\\\\\\\\\\\\\\\\
+viewAllStudents(List<Map<String, String>> students) {
+  print("------------ Registered Students ------------");
+  for (var student in students) {
+    print(
+        "ID: ${student["id"]}, Name: ${student["name"]}, Email: ${student["email"]}");
+  }
+}
